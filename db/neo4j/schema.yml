@@ -14,15 +14,10 @@
 :constraints:
 - CONSTRAINT ON ( `neo4j::migrations::schemamigration`:`Neo4j::Migrations::SchemaMigration`
   ) ASSERT `neo4j::migrations::schemamigration`.migration_id IS UNIQUE
-- CONSTRAINT ON ( divesite:DiveSite ) ASSERT divesite.uuid IS UNIQUE
-- CONSTRAINT ON ( logentry:LogEntry ) ASSERT logentry.uuid IS UNIQUE
+- CONSTRAINT ON ( dive:Dive ) ASSERT dive.uuid IS UNIQUE
 - CONSTRAINT ON ( user:User ) ASSERT user.uuid IS UNIQUE
-:indexes:
-- INDEX ON :User(email)
-- INDEX ON :User(remember_token)
-- INDEX ON :User(reset_password_token)
+:indexes: []
 :versions:
-- '20180703135148'
-- '20180703145148'
-- '20180703145150'
-- '20180703151538'
+- '20180704165710'
+- '20180704165714'
+- '20180704165717'

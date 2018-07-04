@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @latest_dive = LogEntry.last
+    @latest_dive = Dive.last
   end
 end

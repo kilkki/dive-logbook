@@ -39,4 +39,8 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Test can not read yml file
+   config.neo4j.session.type = :http
+   config.neo4j.session_path = ENV['NEO4J_URL'] || 'http://localhost:7475'
 end
