@@ -22,13 +22,13 @@ class DivesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create dive" do
     assert_difference('Dive.count') do
-      post dives_url, params: { dive: { title: 'title1 '  } }
+      post dives_url, params: { dive: { title: 'title1'  } }
     end
 
-    assert_redirected_to dife_url(Dive.all.order_by(:created_at).last)
+    assert_redirected_to dife_url(Dive.where(title: 'title1').last)
 
     assert_difference('Dive.count') do
-      post dives_url, params: { dive: { title: 'title1 '  } }, as: :json
+      post dives_url, params: { dive: { title: 'title1'  } }, as: :json
       assert_response :created
     end
   end
