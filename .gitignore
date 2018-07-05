@@ -52,3 +52,4 @@ node_modules/
 
 # Neo4j binaries
 db/neo4j/development/
+db/neo4j/test/

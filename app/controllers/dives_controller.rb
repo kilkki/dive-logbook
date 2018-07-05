@@ -11,6 +11,10 @@ class DivesController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html    { render :show }
+      format.json { render json: @dive }
+    end
   end
 
   def new
@@ -25,7 +29,7 @@ class DivesController < ApplicationController
     respond_to do |format|
       if @dive.update(dive_params)
         format.html { redirect_to @dive, notice: 'Dive was successfully updated.' }
-        format.json { render :show, status: :created, location: @dive }
+        format.json { render json: @dive, status: :created }
       else
         format.html { render :new }
         format.json { render json: @dive.errors, status: :unprocessable_entity }
@@ -39,7 +43,7 @@ class DivesController < ApplicationController
     respond_to do |format|
       if @dive.save
         format.html { redirect_to @dive, notice: 'Dive was successfully created.' }
-        format.json { render :show, status: :created, location: @dive }
+        format.json { render json: @dive, status: :created }
       else
         format.html { render :new }
         format.json { render json: @dive.errors, status: :unprocessable_entity }
