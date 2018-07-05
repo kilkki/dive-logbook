@@ -20,10 +20,11 @@
 
     <ul class="navbar-nav">
       <li class="nav-item ">
-        <%= link_to current_user.email, user_path(current_user), class: 'nav-link'  %>
+        <% if current_user  %>
+            <%= link_to current_user.email, user_path(current_user), class: 'nav-link'  %>
+        <% end %>
+
       </li>
-
     </ul>
-
   </div>
 </nav>
