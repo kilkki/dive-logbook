@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DivesControllerTest < ActionDispatch::IntegrationTest
+class DifesControllerTest < ActionDispatch::IntegrationTest
   setup do
     # Clear database
     Neo4j::ActiveBase.current_session.query('MATCH (n) DETACH DELETE n')
