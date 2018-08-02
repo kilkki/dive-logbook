@@ -14,6 +14,7 @@
 :constraints:
 - CONSTRAINT ON ( `neo4j::migrations::schemamigration`:`Neo4j::Migrations::SchemaMigration`
   ) ASSERT `neo4j::migrations::schemamigration`.migration_id IS UNIQUE
+- CONSTRAINT ON ( attributevalue:AttributeValue ) ASSERT attributevalue.uuid IS UNIQUE
 - CONSTRAINT ON ( dive:Dive ) ASSERT dive.uuid IS UNIQUE
 - CONSTRAINT ON ( dynamicattribute:DynamicAttribute ) ASSERT dynamicattribute.uuid
   IS UNIQUE
@@ -23,3 +24,4 @@
 - '20180704165710'
 - '20180704165714'
 - '20180705154947'
+- '20180802154515'
